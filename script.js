@@ -23,6 +23,124 @@ const images = [
     'https://i.imgur.com/vNvKu4r.jpg'
 ];
 
+// Sure isimlerinin Türkçe karşılıkları
+const surahNamesTurkish = {
+    "Al-Faatiha": "Fâtiha",
+    "Al-Baqara": "Bakara",
+    "Aal-i-Imraan": "Âl-i İmrân",
+    "An-Nisaa": "Nisâ",
+    "Al-Maaida": "Mâide",
+    "Al-An'aam": "En'âm",
+    "Al-A'raaf": "A'râf",
+    "Al-Anfaal": "Enfâl",
+    "At-Tawba": "Tevbe",
+    "Yunus": "Yûnus",
+    "Hud": "Hûd",
+    "Yusuf": "Yûsuf",
+    "Ar-Ra'd": "Ra'd",
+    "Ibrahim": "İbrâhîm",
+    "Al-Hijr": "Hicr",
+    "An-Nahl": "Nahl",
+    "Al-Israa": "İsrâ",
+    "Al-Kahf": "Kehf",
+    "Maryam": "Meryem",
+    "Taa-Haa": "Tâhâ",
+    "Al-Anbiyaa": "Enbiyâ",
+    "Al-Hajj": "Hacc",
+    "Al-Muminoon": "Mü'minûn",
+    "An-Noor": "Nûr",
+    "Al-Furqaan": "Furkān",
+    "Ash-Shu'araa": "Şuarâ",
+    "An-Naml": "Neml",
+    "Al-Qasas": "Kasas",
+    "Al-Ankaboot": "Ankebût",
+    "Ar-Room": "Rûm",
+    "Luqman": "Lokmân",
+    "As-Sajda": "Secde",
+    "Al-Ahzaab": "Ahzâb",
+    "Saba": "Sebe'",
+    "Faatir": "Fâtır",
+    "Yaseen": "Yâsîn",
+    "As-Saaffaat": "Sâffât",
+    "Saad": "Sâd",
+    "Az-Zumar": "Zümer",
+    "Ghafir": "Mü'min",
+    "Fussilat": "Fussilet",
+    "Ash-Shura": "Şûrâ",
+    "Az-Zukhruf": "Zuhruf",
+    "Ad-Dukhaan": "Duhân",
+    "Al-Jaathiya": "Câsiye",
+    "Al-Ahqaf": "Ahkāf",
+    "Muhammad": "Muhammed",
+    "Al-Fath": "Fetih",
+    "Al-Hujuraat": "Hucurât",
+    "Qaaf": "Kāf",
+    "Adh-Dhaariyat": "Zâriyât",
+    "At-Tur": "Tûr",
+    "An-Najm": "Necm",
+    "Al-Qamar": "Kamer",
+    "Ar-Rahmaan": "Rahmân",
+    "Al-Waaqia": "Vâkıa",
+    "Al-Hadid": "Hadîd",
+    "Al-Mujaadila": "Mücâdele",
+    "Al-Hashr": "Haşr",
+    "Al-Mumtahana": "Mümtehıne",
+    "As-Saff": "Saff",
+    "Al-Jumu'a": "Cum'a",
+    "Al-Munaafiqoon": "Münâfıkūn",
+    "At-Taghaabun": "Teğâbün",
+    "At-Talaaq": "Talâk",
+    "At-Tahrim": "Tahrîm",
+    "Al-Mulk": "Mülk",
+    "Al-Qalam": "Kalem",
+    "Al-Haaqqa": "Hâkka",
+    "Al-Ma'aarij": "Meâric",
+    "Nooh": "Nûh",
+    "Al-Jinn": "Cin",
+    "Al-Muzzammil": "Müzzemmil",
+    "Al-Muddaththir": "Müddessir",
+    "Al-Qiyaama": "Kıyâmet",
+    "Al-Insaan": "İnsan",
+    "Al-Mursalaat": "Mürselât",
+    "An-Naba": "Nebe'",
+    "An-Naazi'aat": "Nâziât",
+    "Abasa": "Abese",
+    "At-Takwir": "Tekvîr",
+    "Al-Infitaar": "İnfitār",
+    "Al-Mutaffifin": "Mutaffifîn",
+    "Al-Inshiqaaq": "İnşikāk",
+    "Al-Burooj": "Burûc",
+    "At-Taariq": "Târık",
+    "Al-A'laa": "A'lâ",
+    "Al-Ghaashiya": "Ğâşiye",
+    "Al-Fajr": "Fecr",
+    "Al-Balad": "Beled",
+    "Ash-Shams": "Şems",
+    "Al-Lail": "Leyl",
+    "Ad-Dhuhaa": "Duhâ",
+    "Ash-Sharh": "İnşirâh",
+    "At-Tin": "Tîn",
+    "Al-Alaq": "Alak",
+    "Al-Qadr": "Kadr",
+    "Al-Bayyina": "Beyyine",
+    "Az-Zalzala": "Zelzele",
+    "Al-Aadiyaat": "Âdiyât",
+    "Al-Qaari'a": "Kāria",
+    "At-Takaathur": "Tekâsür",
+    "Al-Asr": "Asr",
+    "Al-Humaza": "Hümeze",
+    "Al-Fil": "Fîl",
+    "Quraish": "Kureyş",
+    "Al-Maa'un": "Mâûn",
+    "Al-Kawthar": "Kevser",
+    "Al-Kaafiroon": "Kâfirûn",
+    "An-Nasr": "Nasr",
+    "Al-Masad": "Tebbet",
+    "Al-Ikhlaas": "İhlâs",
+    "Al-Falaq": "Felak",
+    "An-Naas": "Nâs"
+};
+
 // Özlü sözler
 const quotes = [
     "Rabbin seni senden daha iyi tanıyor; O'na dönmekten çekinme.",
@@ -62,7 +180,7 @@ function setRandomBackground() {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     
     document.getElementById('backgroundImage').style.backgroundImage = `url('${randomImage}')`;
-    document.getElementById('quoteOverlay').textContent = randomQuote;
+    document.getElementById('quoteBottom').textContent = randomQuote;
 }
 
 // Koordinatlardan sure ve ayet hesapla
@@ -92,9 +210,13 @@ async function fetchVerseFromAPI(suraNumber, verseNumber) {
         const data = await response.json();
         
         if (data.code === 200 && data.data) {
+            // Arapça sure ismini Türkçe'ye çevir
+            const arabicName = data.data.surah.englishName;
+            const turkishName = surahNamesTurkish[arabicName] || data.data.surah.name;
+            
             return {
                 text: data.data.text,
-                suraName: data.data.surah.name
+                suraName: turkishName
             };
         } else {
             throw new Error('API yanıt hatası');
@@ -183,8 +305,8 @@ document.getElementById('searchInput').addEventListener('input', (e) => {
     }
     
     searchTimeout = setTimeout(() => {
-        // Nominatim API ile arama
-        fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=tr&accept-language=tr&limit=5`)
+        // Nominatim API ile arama - Dünya çapında
+        fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&accept-language=tr&limit=8`)
             .then(response => response.json())
             .then(data => {
                 resultsDiv.innerHTML = '';
