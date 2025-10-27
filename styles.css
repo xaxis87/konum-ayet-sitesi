@@ -30,23 +30,26 @@ body {
     animation: fadeIn 1.5s ease-in;
 }
 
-.quote-overlay {
-    position: absolute;
-    top: 50%;
+/* Ã–zlÃ¼ sÃ¶z - Beyaz kutunun altÄ±nda */
+.quote-bottom {
+    position: fixed;
+    bottom: 80px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     color: white;
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     text-align: center;
-    padding: 2rem;
-    max-width: 80%;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    padding: 1rem 2rem;
+    max-width: 600px;
+    width: 90%;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 1.5;
     animation: fadeIn 2s ease-in 0.5s both;
+    z-index: 40;
 }
 
-/* Sol üst köşe - Konum adı */
+/* Sol Ã¼st kÃ¶ÅŸe - Konum adÄ± */
 .location-display {
     position: fixed;
     top: 20px;
@@ -64,7 +67,7 @@ body {
     text-overflow: ellipsis;
 }
 
-/* Sağ üst köşe - Arama */
+/* SaÄŸ Ã¼st kÃ¶ÅŸe - Arama */
 .search-container {
     position: fixed;
     top: 20px;
@@ -142,7 +145,7 @@ body {
     border-bottom: none;
 }
 
-/* Orta kısım - Ayet kartı */
+/* Orta kÄ±sÄ±m - Ayet kartÄ± */
 .verse-card {
     position: fixed;
     top: 50%;
@@ -191,7 +194,7 @@ body {
     box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
 }
 
-/* Alt sol köşe - Bilgi ikonu */
+/* Alt sol kÃ¶ÅŸe - Bilgi ikonu */
 .info-btn {
     position: fixed;
     bottom: 20px;
@@ -307,7 +310,7 @@ body {
     }
 }
 
-/* Responsive tasarım */
+/* Responsive tasarÄ±m */
 @media (max-width: 768px) {
     .location-display {
         font-size: 0.9rem;
@@ -325,9 +328,11 @@ body {
         max-width: 90%;
     }
 
-    .quote-overlay {
-        font-size: 1.2rem;
-        padding: 1.5rem;
+    .quote-bottom {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+        bottom: 70px;
+        max-width: 85%;
     }
 
     .modal-content {
@@ -347,5 +352,11 @@ body {
 
     .verse-card {
         padding: 1.5rem;
+    }
+
+    .quote-bottom {
+        font-size: 0.85rem;
+        bottom: 65px;
+        padding: 0.7rem 1.2rem;
     }
 }
