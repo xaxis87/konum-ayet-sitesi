@@ -37,14 +37,14 @@ body {
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     text-align: center;
     padding: 1rem 2rem;
     max-width: 600px;
     width: 90%;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    font-weight: 300;
-    line-height: 1.5;
+    font-weight: 400;
+    line-height: 1.6;
     animation: fadeIn 2s ease-in 0.5s both;
     z-index: 40;
 }
@@ -244,6 +244,8 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s ease;
     position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .modal-content h2 {
@@ -329,14 +331,26 @@ body {
     }
 
     .quote-bottom {
-        font-size: 0.9rem;
+        font-size: 1.05rem;
         padding: 0.8rem 1.5rem;
         bottom: 70px;
         max-width: 85%;
     }
 
     .modal-content {
-        padding: 2rem 1.5rem;
+        padding: 1.8rem 1.3rem;
+        width: 85%;
+        max-width: 400px;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .modal-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 }
 
@@ -355,8 +369,25 @@ body {
     }
 
     .quote-bottom {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         bottom: 65px;
         padding: 0.7rem 1.2rem;
+    }
+    
+    .modal-content {
+        padding: 1.5rem 1rem;
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .modal-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
     }
 }
