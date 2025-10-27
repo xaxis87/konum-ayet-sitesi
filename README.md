@@ -30,7 +30,7 @@ Site tamamen hazır durumda! Yapmanız gereken sadece:
 3. GitHub repository'nizi seçin
 4. Deploy edin - otomatik olarak yayınlanacak
 
-**Not:** Site Kur'an ayetlerini otomatik olarak API'den (api.alquran.cloud) çeker. İnternet bağlantısı gereklidir.
+**Not:** Site Kur'an ayetlerini otomatik olarak **Açık Kuran API**'sinden (api.acikkuran.com) çeker. **Diyanet İşleri Başkanlığı'nın yeni meali** kullanılır. İnternet bağlantısı gereklidir.
 
 ## Teknolojiler
 
@@ -39,6 +39,7 @@ Site tamamen hazır durumda! Yapmanız gereken sadece:
 - Vanilla JavaScript
 - OpenStreetMap Nominatim API (konum arama)
 - Browser Geolocation API
+- **Açık Kuran API** (Diyanet İşleri Başkanlığı meali)
 
 ## Lisans
 
