@@ -1,0 +1,19 @@
+# Geliştirme dosyaları
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE dosyaları
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Geçici dosyalar
+*.tmp
+*~
+
+# Python dosyaları (yardımcı scriptler)
+__pycache__/
+*.py[cod]
+*$py.class

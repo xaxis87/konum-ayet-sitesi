@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konum Tabanlı Ayet Okuma</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Arka plan container -->
+    <div class="background-container">
+        <div class="background-image" id="backgroundImage"></div>
+        <div class="quote-overlay" id="quoteOverlay"></div>
+    </div>
+
+    <!-- Sol üst köşe - Konum adı -->
+    <div class="location-display" id="locationDisplay">
+        Konum seçiniz
+    </div>
+
+    <!-- Sağ üst köşe - Arama ve konum algılama -->
+    <div class="search-container">
+        <button class="location-btn" id="detectLocationBtn" title="Konumumu algıla">
+            📍
+        </button>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Şehir, kasaba veya köy ara..." autocomplete="off">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Orta kısım - Ayet kartı -->
+    <div class="verse-card" id="verseCard">
+        <div class="verse-text" id="verseText">
+            Konumunuzu seçerek size özel bir ayet keşfedin
+        </div>
+        <div class="verse-info" id="verseInfo"></div>
+        <a href="#" class="diyanet-link" id="diyanetLink" target="_blank" style="display: none;">
+            Diyanet'te Sure'yi Oku →
+        </a>
+    </div>
+
+    <!-- Alt sol köşe - Bilgi ikonu -->
+    <button class="info-btn" id="infoBtn">ℹ️</button>
+
+    <!-- Bilgi modal -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <h2>Bu site nasıl çalışır?</h2>
+            <p>Bu site, bulunduğunuz konumun koordinatlarını matematiksel bir formülle Kur'an-ı Kerim'deki sure ve ayet numaralarına dönüştürerek size rastgele bir ayet sunar.</p>
+            <p><strong>Ayetlerle konumlar arasında herhangi bir ilişki veya anlam bağı yoktur.</strong></p>
+            <p>Bu site, sadece Kur'an-ı Kerim'i okumaya teşvik etmek amacıyla tasarlanmış eğlenceli bir uygulamadır.</p>
+        </div>
+    </div>
+
+    <script src="quran-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
