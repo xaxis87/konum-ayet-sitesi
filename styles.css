@@ -30,7 +30,7 @@ body {
     animation: fadeIn 1.5s ease-in;
 }
 
-/* Ã–zlÃ¼ sÃ¶z - Beyaz kutunun altÄ±nda */
+/* Özlü söz - Beyaz kutunun altında */
 .quote-bottom {
     position: fixed;
     bottom: 80px;
@@ -49,12 +49,14 @@ body {
     z-index: 40;
 }
 
-/* Sol Ã¼st kÃ¶ÅŸe - Konum adÄ± */
+/* Sol üst köşe - Konum adı */
 .location-display {
     position: fixed;
     top: 20px;
     left: 20px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 12px 20px;
     border-radius: 25px;
     font-size: 1rem;
@@ -67,7 +69,7 @@ body {
     text-overflow: ellipsis;
 }
 
-/* SaÄŸ Ã¼st kÃ¶ÅŸe - Arama */
+/* Sağ üst köşe - Arama */
 .search-container {
     position: fixed;
     top: 20px;
@@ -78,7 +80,9 @@ body {
 }
 
 .location-btn {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: none;
     width: 45px;
     height: 45px;
@@ -104,7 +108,9 @@ body {
     border: none;
     border-radius: 25px;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     outline: none;
 }
@@ -145,13 +151,15 @@ body {
     border-bottom: none;
 }
 
-/* Orta kÄ±sÄ±m - Ayet kartÄ± */
+/* Orta kısım - Ayet kartı */
 .verse-card {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 2.5rem;
     border-radius: 20px;
     max-width: 600px;
@@ -194,7 +202,7 @@ body {
     box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
 }
 
-/* Alt sol kÃ¶ÅŸe - Bilgi ikonu */
+/* Alt sol köşe - Bilgi ikonu */
 .info-btn {
     position: fixed;
     bottom: 20px;
@@ -203,7 +211,9 @@ body {
     height: 45px;
     border-radius: 50%;
     border: none;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     font-size: 1.5rem;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -312,7 +322,7 @@ body {
     }
 }
 
-/* Responsive tasarÄ±m */
+/* Responsive tasarım */
 @media (max-width: 768px) {
     .location-display {
         font-size: 0.9rem;
