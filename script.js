@@ -31,7 +31,7 @@ const quotes = [
     "İçindeki fırtınayı dindirecek tek liman: Namaz.",
     "Her secde, kalbine inen bir huzur kapısıdır.",
     "Sadece secde et ve bırak yüklerini Rahman'a.",
-    "Bu bir yük değil, Yaradan'la kalpten bir buluşma. Kıymetini bil.",
+    "Namaz bir yük değil, Yaradan'la kalpten bir buluşma. Kıymetini bil.",
     "Her secde, günün ağırlığından arınmak ve yeniden başlamak için bir fırsattır.",
     "Kalbinin diliyle konuşma vakti: Namaz.",
     "Namazın huzurunda Rabbinin merhametine sığın.",
