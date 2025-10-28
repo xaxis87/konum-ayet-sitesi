@@ -151,7 +151,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.50);
+    background: rgba(255, 255, 255, 0.60);
     padding: 2.5rem;
     border-radius: 20px;
     max-width: 600px;
@@ -160,6 +160,9 @@ body {
     text-align: center;
     animation: fadeInUp 1s ease-out 1s both;
     z-index: 50;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .verse-text {
