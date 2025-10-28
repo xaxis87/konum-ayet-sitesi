@@ -184,8 +184,6 @@ async function displayVerse(suraNumber, verseNumber) {
         document.getElementById('diyanetLink').textContent = 'Diyanet\'te Bu Ayeti Oku →';
     }
 }
-}
-}
 
 // Konum algılama
 document.getElementById('detectLocationBtn').addEventListener('click', () => {
