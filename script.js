@@ -65,22 +65,34 @@ function setRandomBackground() {
     document.getElementById('quoteBottom').textContent = randomQuote;
 }
 
-// Koordinatlardan sure ve ayet hesapla
+// Basit hash fonksiyonu (string'den sayı üretir)
+function simpleHash(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // 32-bit integer'a çevir
+    }
+    return Math.abs(hash);
+}
+
+// Koordinatlardan sure ve ayet hesapla (Hash tabanlı - daha çeşitli)
 function calculateVerseFromCoordinates(lat, lon) {
-    // Enlem (-90 ile +90 arası) -> Sure numarası (1-114)
-    // Enlem değerini 0-114 arasına normalize et
-    const normalizedLat = ((lat + 90) / 180) * 114;
-    const suraNumber = Math.max(1, Math.min(114, Math.ceil(normalizedLat)));
+    // Koordinatları 6 ondalık basamağa yuvarla ve string yap
+    const coordString = lat.toFixed(6) + ',' + lon.toFixed(6);
     
-    // Boylam (-180 ile +180 arası) -> Ayet numarası
-    // Boylam değerini 0-1 arasına normalize et
-    const normalizedLon = (lon + 180) / 360;
+    // Hash üret
+    const hash = simpleHash(coordString);
+    
+    // Sure numarasını belirle (1-114 arası)
+    const suraNumber = (hash % 114) + 1;
     
     // Surenin ayet sayısını al
     const totalVerses = QURAN_DATA.surahs[suraNumber - 1].numberOfAyahs;
     
-    // Ayet numarasını hesapla
-    const verseNumber = Math.max(1, Math.min(totalVerses, Math.ceil(normalizedLon * totalVerses)));
+    // Ayet numarasını belirle (farklı bir hash çarpanı kullan)
+    const verseHash = hash * 7919; // Asal sayı ile çarp
+    const verseNumber = (verseHash % totalVerses) + 1;
     
     return { suraNumber, verseNumber };
 }
