@@ -100,7 +100,17 @@ function calculateVerseFromCoordinates(lat, lon) {
 // API'den ayet bilgilerini al (Açık Kuran API - Diyanet Meali)
 async function fetchVerseFromAPI(suraNumber, verseNumber) {
     try {
-        const response = await fetch(`https://api.acikkuran.com/surah/${suraNumber}/verse/${verseNumber}/translations`);
+        const response = await fetch(`https://api.acikkuran.com/surah/${suraNumber}/verse/${verseNumber}/translations`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const data = await response.json();
         
         if (data.data && data.data.length > 0) {
@@ -122,10 +132,11 @@ async function fetchVerseFromAPI(suraNumber, verseNumber) {
                 suraName: suraInfo.name
             };
         } else {
-            throw new Error('API yanıt hatası');
+            throw new Error('API boş veri döndü');
         }
     } catch (error) {
         console.error('API hatası:', error);
+        console.error('Sure:', suraNumber, 'Ayet:', verseNumber);
         return null;
     }
 }
@@ -137,7 +148,19 @@ async function displayVerse(suraNumber, verseNumber) {
     document.getElementById('verseInfo').textContent = '';
     
     // API'den ayet bilgilerini al
-    const data = await fetchVerseFromAPI(suraNumber, verseNumber);
+    let data = await fetchVerseFromAPI(suraNumber, verseNumber);
+    
+    // Eğer API başarısız olduysa, alternatif ayet dene
+    if (!data) {
+        console.log('İlk deneme başarısız, alternatif ayet deneniyor...');
+        // Ayet numarasını biraz değiştir (1-3 arası azalt)
+        const alternativeVerse = Math.max(1, verseNumber - (verseNumber % 3));
+        data = await fetchVerseFromAPI(suraNumber, alternativeVerse);
+        
+        if (data) {
+            verseNumber = alternativeVerse; // Gösterim için güncelle
+        }
+    }
     
     if (data) {
         document.getElementById('verseText').innerHTML = `"${data.text}"`;
@@ -147,16 +170,21 @@ async function displayVerse(suraNumber, verseNumber) {
         const diyanetLink = `https://kuran.diyanet.gov.tr/mushaf/kuran-meal-2/${suraNumber}`;
         document.getElementById('diyanetLink').href = diyanetLink;
         document.getElementById('diyanetLink').style.display = 'inline-block';
+        document.getElementById('diyanetLink').textContent = 'Diyanet\'te Sure\'yi Oku →';
     } else {
-        // API başarısız olursa placeholder göster
+        // Her iki deneme de başarısız
         const sura = QURAN_DATA.surahs[suraNumber - 1];
-        document.getElementById('verseText').innerHTML = 'Ayet yüklenirken bir hata oluştu. Lütfen internet bağlantınızı kontrol edin.';
+        document.getElementById('verseText').innerHTML = `API'den ayet yüklenirken bir sorun oluştu. Lütfen internet bağlantınızı kontrol edin veya birkaç saniye sonra tekrar deneyin.`;
         document.getElementById('verseInfo').textContent = `${sura.name} Suresi - ${verseNumber}. Ayet`;
         
+        // Diyanet linki yine de göster
         const diyanetLink = `https://kuran.diyanet.gov.tr/mushaf/kuran-meal-2/${suraNumber}`;
         document.getElementById('diyanetLink').href = diyanetLink;
         document.getElementById('diyanetLink').style.display = 'inline-block';
+        document.getElementById('diyanetLink').textContent = 'Diyanet\'te Bu Ayeti Oku →';
     }
+}
+}
 }
 
 // Konum algılama
